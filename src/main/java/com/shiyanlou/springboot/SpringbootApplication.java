@@ -8,18 +8,20 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 public class SpringbootApplication {
-    @Configuration
-    static class WebConfig implements WebMvcConfigurer{
-        //重写addResourcreHandlers方法
-        @Override
-        public void addResourceHandlers(ResourceHandlerRegistry registry) {
-            //设置静态资源映射路径为/**，资源位置为类路径下的upload
-            /**
-             "classpath:/upload/"   后面少写了有一个/，哎哎哎
-             */
-            registry.addResourceHandler("/**").addResourceLocations("classpath:/upload/");
-        }
-    }
+
+//    //设置配置类，加载/upload目录下的图片
+//    @Configuration
+//    static class WebConfig implements WebMvcConfigurer{
+//        //重写addResourcreHandlers方法
+//        @Override
+//        public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//            //设置静态资源映射路径为/**，资源位置为类路径下的upload
+//            /**
+//             "classpath:/upload/"   后面少写了有一个/，哎哎哎
+//             */
+//            registry.addResourceHandler("/**").addResourceLocations("classpath:/upload/");
+//        }
+//    }
 
     public static void main(String[] args) {
         SpringApplication.run(SpringbootApplication.class, args);
